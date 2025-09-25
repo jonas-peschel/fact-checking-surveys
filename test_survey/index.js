@@ -22,7 +22,8 @@ survey.onComplete.add((sender, options) => {
     console.log("Survey data to send:", JSON.stringify(data, null, 2));
 
     // POST to Netlify function
-    fetch("http://localhost:8888/.netlify/functions/save_results", {
+    //local: http://localhost:8888/.netlify/functions/save_results
+    fetch("https://fact-checking-user-study.netlify.app/.netlify/functions/save_results", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
